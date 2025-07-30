@@ -85,6 +85,9 @@ pub(crate) fn statement(stmt: &Stmt, checker: &mut Checker) {
             if checker.is_rule_enabled(Rule::DjangoNonLeadingReceiverDecorator) {
                 flake8_django::rules::non_leading_receiver_decorator(checker, decorator_list);
             }
+            if checker.is_rule_enabled(Rule::AsyncGeneratorWithoutContextmanager) {
+                flake8_async::rules::async_generator_without_contextmanager(checker, function_def);
+            }
             if checker.is_rule_enabled(Rule::FastApiRedundantResponseModel) {
                 fastapi::rules::fastapi_redundant_response_model(checker, function_def);
             }

@@ -28,6 +28,7 @@ mod tests {
     #[test_case(Rule::WaitForProcessInAsyncFunction, Path::new("ASYNC22x.py"))]
     #[test_case(Rule::BlockingOpenCallInAsyncFunction, Path::new("ASYNC230.py"))]
     #[test_case(Rule::BlockingSleepInAsyncFunction, Path::new("ASYNC251.py"))]
+    #[test_case(Rule::AsyncGeneratorWithoutContextmanager, Path::new("ASYNC900.py"))]
     fn rules(rule_code: Rule, path: &Path) -> Result<()> {
         let snapshot = format!("{}_{}", rule_code.noqa_code(), path.to_string_lossy());
         let diagnostics = test_path(

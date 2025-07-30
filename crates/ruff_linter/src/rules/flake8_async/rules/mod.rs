@@ -1,5 +1,6 @@
 pub(crate) use async_busy_wait::*;
 pub(crate) use async_function_with_timeout::*;
+pub(crate) use async_generator_without_contextmanager::*;
 pub(crate) use async_zero_sleep::*;
 pub(crate) use blocking_http_call::*;
 pub(crate) use blocking_open_call::*;
@@ -11,6 +12,7 @@ pub(crate) use sync_call::*;
 
 mod async_busy_wait;
 mod async_function_with_timeout;
+mod async_generator_without_contextmanager;
 mod async_zero_sleep;
 mod blocking_http_call;
 mod blocking_open_call;
