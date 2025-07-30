@@ -1,0 +1,30 @@
+---
+source: crates/ruff_linter/src/rules/flake8_async/mod.rs
+---
+ASYNC900.py:8:11: ASYNC900 Async generator without `@asynccontextmanager` not allowed
+   |
+ 7 | # Error: ASYNC900 - async generator without decorator
+ 8 | async def foo1():
+   |           ^^^^ ASYNC900
+ 9 |     yield
+10 |     yield
+   |
+
+ASYNC900.py:22:15: ASYNC900 Async generator without `@asynccontextmanager` not allowed
+   |
+20 | @asynccontextmanager
+21 | async def foo3():
+22 |     async def bar():  # ASYNC900
+   |               ^^^ ASYNC900
+23 |         yield
+24 |     yield
+   |
+
+ASYNC900.py:61:11: ASYNC900 Async generator without `@asynccontextmanager` not allowed
+   |
+60 | # Error: ASYNC900 - async generator without decorator
+61 | async def simple_async_gen():
+   |           ^^^^^^^^^^^^^^^^ ASYNC900
+62 |     value = 0
+63 |     while True:
+   |
